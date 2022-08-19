@@ -7,7 +7,6 @@ resource "tls_private_key" "key_pair" {
 resource "aws_key_pair" "key_pair" {
   key_name   = "ec2-key-pair"  
   public_key = tls_private_key.key_pair.public_key_openssh
-  #public_key = file("${abspath(path.cwd)}/ec2-key-pair.pem")
 }
 
 # Save file-nya ke local
